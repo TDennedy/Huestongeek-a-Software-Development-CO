@@ -1,0 +1,16 @@
+.App {
+}
+
+.map-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 77px);
+}
+
+.maplibregl-map.mapboxgl-map.mode-draw_line_string {
+  cursor: crosshair;
+}
+
+.mapboxgl-canvas-container.mapboxgl-interactive:active, .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass:active, .maplibregl-canvas-container.maplibregl-interactive:active, .maplibregl-ctrl-group button.maplibregl-ctrl-compass:active{
+  
+}
