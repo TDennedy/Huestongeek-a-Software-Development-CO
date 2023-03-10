@@ -5,9 +5,10 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { initKeycloak } from "./Keycloak";
 
+import { getOxfordTrails } from "./Requests.js"
 import DrawControl from "./Draw.tsx";
 import './App.css';
-import trails from "./features.json";
+// import trails from "./features.json";
 
 import { useEffect, useState } from "react";
 
@@ -39,27 +40,9 @@ const initialViewState = {
 	zoom: 14
 }
 
-const DEFAULT_VIEWPORT = {
-	width: 800,
-	height: 600,
-	longitude: -122.45,
-	latitude: 37.78,
-	zoom: 14,
-};
-
 initKeycloak();
 
-function App() {
-	useEffect(() => {
-		const fetchData = async () => {
-			//const response = await fetch("https://api.maptiler.com/data/d5ed667f-6740-41d7-90ae-8db62726665a/features.json?key=Adfu325jajdZpZFxiEJu");
-
-		//	setData(trails);
-		};
-
-		//fetchData();
-	}, []);
-	
+function App() {	
 	return (
 		<div className="App">
 			<Navbar/>
@@ -72,29 +55,36 @@ function App() {
 function MapComponent() {
 	const [ data, setData ] = useState();
 
-	return (
-		<Map mapLib={maplibregl}
-			initialViewState={initialViewState}
-			mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
-			style={{width: "100%", height: " calc(100vh - 77px)"}}
-		>
-			<NavigationControl position="top-left" />
-			<Source type="geojson" data={trails}>
-				<Layer {...pointLayerStyle} />
-				<Layer {...lineLayerStyle} />
-			</Source>
-		</Map>
-	)
+	useEffect(() => {
+		const getData = async () => {
+			const resp = await getOxfordTrails();
+			setData(await resp.json());
+		}
+
+		getData();
+	}, []);
+
+	if (data != null)
+		return (
+			<Map mapLib={maplibregl}
+				initialViewState={initialViewState}
+				mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
+				style={{width: "100%", height: " calc(100vh - 77px)"}}
+			>
+				<NavigationControl position="top-left" />
+				<Source type="geojson" data={data}>
+					<Layer {...pointLayerStyle} />
+					<Layer {...lineLayerStyle} />
+				</Source>
+			</Map>
+		);
 }
 
 // Drawing the trails
 function DrawMapComponent() {
-//	const [ viewport, setViewport ] = useState({ viewport: DEFAULT_VIEWPORT, modeHandler: null });
-
 	return (
-      	<Map
-//  		{...viewport}
-	        mapLib={maplibregl}
+      	<Map 
+      		mapLib={maplibregl}
 			initialViewState={initialViewState}
 			mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
 			style={{width: "100%", height: " calc(100vh - 77px)"}}

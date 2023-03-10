@@ -7,10 +7,35 @@
   height: calc(100vh - 77px);
 }
 
-.maplibregl-map.mapboxgl-map.mode-draw_line_string {
+.maplibregl-canvas.mapboxgl-canvas {
+  cursor: unset;
+}
+
+.mapboxgl-canvas-container {
+  cursor: unset;
+}
+
+.mapboxgl-canvas-container.mapboxgl-interactive,
+.mapboxgl-ctrl-group button.mapboxgl-ctrl-compass, 
+.maplibregl-canvas-container.maplibregl-interactive, 
+.maplibregl-ctrl-group button.maplibregl-ctrl-compass {
+  cursor: unset;
+}
+
+.mapboxgl-canvas-container.mapboxgl-interactive:active,
+.mapboxgl-ctrl-group button.mapboxgl-ctrl-compass:active {
+  cursor: grabbing;
+}
+
+.mode-draw_line_string > .mapboxgl-canvas-container.mapboxgl-interactive:active,
+.mode-draw_line_string > .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass:active {
   cursor: crosshair;
 }
 
-.mapboxgl-canvas-container.mapboxgl-interactive:active, .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass:active, .maplibregl-canvas-container.maplibregl-interactive:active, .maplibregl-ctrl-group button.maplibregl-ctrl-compass:active{
-  
+.maplibregl-map.mapboxgl-map {
+  cursor: grab;
+}
+
+.maplibregl-map.mapboxgl-map.mode-draw_line_string {
+  cursor: crosshair;
 }
