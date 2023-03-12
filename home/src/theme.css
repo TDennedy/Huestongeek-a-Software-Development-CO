@@ -1,0 +1,63 @@
+/*
+    Filename: theme.css
+*/
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("https://cdn.huestonwoodslodge.com/imagertransforms/cdn_huestonwoodslodge_com/general-uploads/Hueston-RoadWoods-Header-1920x500_567cec0028f4284383f7911cb1d66e44.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+header {
+    background-color: rgb(240, 248, 255);
+    background-color: rgb(240, 248, 255, 0.4);
+    backdrop-filter: blur(4px);
+    height: 150%;
+    padding: 0;
+}
+
+header > h1 {
+    font-size: 3.5em;
+    background: linear-gradient(to right, rgba(255, 215, 255, 0) 0%, rgba(225, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0) 61%), linear-gradient(rgb(62, 161, 58) 52%, rgb(255, 238, 224) 60%, rgb(61, 107, 73) 61%);
+    background-clip: text;
+    color: transparent;
+}
+
+header button {
+    background-color: #04aa4f;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #057538;
+    color: rgb(235, 235, 235);
+}
+
+nav {
+    background-color: antiquewhite;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+footer {
+    background-color: aliceblue;
+    background-color: rgb(240, 248, 255, 0.4);
+    backdrop-filter: blur(4px);
+    height: 150%;
+    padding: 0;
+}
