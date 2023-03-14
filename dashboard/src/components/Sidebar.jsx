@@ -73,6 +73,7 @@ const Sidebar = () => {
                   Map
               </p>
               <NavLink
+                to="/"
                 key="Map"
                 onClick={handleCloseSideBar}
                 style={({ isActive }) => ({
