@@ -73,6 +73,9 @@ const Sidebar = () => {
                   Map
               </p>
               <NavLink
+                // Take an eye to this point, which cause error
+                to="/"
+                //
                 key="Map"
                 onClick={handleCloseSideBar}
                 style={({ isActive }) => ({
