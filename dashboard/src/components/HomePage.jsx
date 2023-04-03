@@ -7,7 +7,7 @@ export default function HomePage({ keycloak }) {
                 <a href="">Placeholder Text</a>
                 <a href="">Placeholder Text</a>
                 <a href="">Placeholder Text</a>
-                <button onClick={() => keycloak.login({ redirectUri: "http://localhost:3000"})}>
+                <button onClick={() => keycloak.login({ redirectUri: origin})}>
                     Login
                 </button>
             </nav><div class="map">

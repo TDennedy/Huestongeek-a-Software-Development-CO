@@ -14,6 +14,8 @@ import GoogleMap from './components/GoogleMap';
 
 import HomePage from './components/HomePage';
 
+import MapComponent from './components/Map/GLMap';
+
 // Init keycloak
 initKeycloak();
 
@@ -53,6 +55,9 @@ const DashBoard = ({ keycloak }) => {
     }
   }, []);
 
+
+
+  // What will be printed to the screen
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
@@ -97,7 +102,7 @@ const DashBoard = ({ keycloak }) => {
 
                   <Routes>
                     {/* dashboard  */}
-                    <Route path="/" element={(<GoogleMap />)} />
+                    <Route path="/" element={(<MapComponent />)} />
                     <Route path="/ecommerce" element={(<Ecommerce />)} />
 
                     {/* pages  */}
