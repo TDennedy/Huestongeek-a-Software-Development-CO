@@ -3,16 +3,21 @@ import { useNavigate } from 'react-router-dom'
 
 import { useStateContext } from '../contexts/ContextProvider';
 
-const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, width, onClick }) => {
-  // const { setIsClicked, initialState } = useStateContext();
+const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, width, onClickLogout }) => {
+  const { setIsClicked, initialState } = useStateContext();
 
   // Get the logged out state
   const { logout } = useStateContext()
   const navigate = useNavigate()  // For navigation
 
   const handleClick = () => {
-    if (onClick) onClick(navigate)
-    logout()
+    if (onClickLogout) {
+      onClickLogout(navigate)
+      logout()
+    } else {
+      const changesthElse = () => setIsClicked(initialState)
+      changesthElse()
+    }
   }
   
   return (
