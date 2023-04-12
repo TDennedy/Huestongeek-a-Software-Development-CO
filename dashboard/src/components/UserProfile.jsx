@@ -58,6 +58,7 @@ const UserProfile = () => {
           text="Logout"
           borderRadius="10px"
           width="full"
+          onClick={(navigate) => navigate('/')}
         />
       </div>
     </div>

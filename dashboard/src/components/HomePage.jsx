@@ -10,7 +10,8 @@ export default function HomePage({ keycloak }) {
                 <button onClick={() => keycloak.login({ redirectUri: origin})}>
                     Login
                 </button>
-            </nav><div class="map">
+            </nav>
+            <div className="map">
                 <img src="https://www.discoverdaytonohio.com/wp-content/uploads/place_lakes_and_parks_hueston_woods_20-1.jpg" alt="Map Image" />
             </div><footer>
                 <p>Copyright HuestonGeeks 2023</p>

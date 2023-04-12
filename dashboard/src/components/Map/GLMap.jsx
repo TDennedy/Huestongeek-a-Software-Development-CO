@@ -41,7 +41,7 @@ const initialViewState = {
 
 // Displaying the drawn trails
 function MapComponent() {
-	const [ data, setData ] = useState();
+	const [ data, setData ] = useState(null);
 
 	// useEffect(() => {
 	// 	const getData = async () => {
@@ -52,7 +52,22 @@ function MapComponent() {
 	// 	getData();
 	// }, []);
 
-	if (data != null)
+	useEffect(() => {
+		const getData = async () => {
+			const response = await fetch(
+				"https://api.maptiler.com/data/d5ed667f-6740-41d7-90ae-8db62726665a/features.json?key=Adfu325jajdZpZFxiEJu"
+			)
+			const json = await response.json()
+
+			console.log(json)
+
+			setData(json)
+		}
+
+		getData()
+	}, [])
+
+	// if (data != null)
 		return (
 			<Map mapLib={maplibregl}
 				initialViewState={initialViewState}
