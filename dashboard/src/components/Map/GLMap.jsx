@@ -3,12 +3,14 @@ import Map, {NavigationControl, Source, Layer} from 'react-map-gl';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-// import { getOxfordTrails } from "./Requests.js"
+import { getOxfordTrails } from "./Requests.js"
 // import DrawControl from "./Draw.tsx";
 // import './App.css';
 // import trails from "./features.json";
 
 import { useEffect, useState } from "react";
+
+const TRAIL_COLOR_KEY = "color";
 
 const pointLayerStyle = {
 	id: 'points',
@@ -26,7 +28,7 @@ const lineLayerStyle = {
 	id: 'lines',
 	type: 'line',
 	paint: {
-		'line-color': 'blue',
+		'line-color': ['get', TRAIL_COLOR_KEY],
 		'line-width': 2,
 	},
 	filter: ['==', '$type', 'LineString']
@@ -43,14 +45,14 @@ const initialViewState = {
 function MapComponent() {
 	const [ data, setData ] = useState(null);
 
-	// useEffect(() => {
-	// 	const getData = async () => {
-	// 		const resp = await getOxfordTrails();
-	// 		setData(await resp.json());
-	// 	}
+	useEffect(() => {
+		const getData = async () => {
+			const resp = await getOxfordTrails();
+			setData(await resp.json());
+		}
 
-	// 	getData();
-	// }, []);
+		getData();
+	}, [data]);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -64,7 +66,7 @@ function MapComponent() {
 			setData(json)
 		}
 
-		getData()
+		getData();
 	}, [])
 
 	// if (data != null)
