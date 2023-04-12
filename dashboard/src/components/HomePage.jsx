@@ -16,7 +16,7 @@ export default function HomePage({ keycloak }) {
                     Login
                 </button>
             </nav><div class="map">
-                <img src={map} alt="Map Image" />
+                <img src="https://www.discoverdaytonohio.com/wp-content/uploads/place_lakes_and_parks_hueston_woods_20-1.jpg" alt="Map Image" />
             </div><footer>
                 <p>Copyright HuestonGeeks 2023</p>
             </footer>

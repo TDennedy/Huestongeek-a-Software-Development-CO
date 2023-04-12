@@ -102,7 +102,8 @@ const DashBoard = ({ keycloak }) => {
 
                   <Routes>
                     {/* dashboard  */}
-                    <Route path="/" element={(<MapComponent />)} />
+                    {/* <Route path="/home" element={(<HomePage />)} /> */}
+                    <Route index={true}  path="/" element={(<MapComponent />)} />
                     <Route path="/ecommerce" element={(<Ecommerce />)} />
 
                     {/* pages  */}
