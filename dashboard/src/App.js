@@ -104,6 +104,7 @@ const DashBoard = ({ keycloak }) => {
                     {/* dashboard  */}
                     {/* <Route path="/home" element={(<HomePage />)} /> */}
                     <Route index={true}  path="/" element={(<MapComponent />)} />
+                    <Route  path="/map" element={(<MapComponent />)} />
                     <Route path="/ecommerce" element={(<Ecommerce />)} />
 
                     {/* pages  */}
@@ -112,8 +113,8 @@ const DashBoard = ({ keycloak }) => {
                     <Route path="/customers" element={<Customers />} />
 
                     {/* apps  */}
-                    <Route path="/kanban" element={<Kanban />} />
-                    <Route path="/editor" element={<Editor />} />
+                    <Route path="/todo" element={<Kanban />} />
+                    <Route path="/diary" element={<Editor />} />
                     <Route path="/calendar" element={<Calendar />} />
                     <Route path="/color-picker" element={<ColorPicker />} />
 

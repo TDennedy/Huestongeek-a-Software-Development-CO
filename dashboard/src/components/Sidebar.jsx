@@ -43,7 +43,7 @@ const Sidebar = () => {
             </TooltipComponent>
           </div>
 
-          {/* <div className="mt-10 ">
+          <div className="mt-10 ">
             {links.map((item) => (
               <div key={item.title}>
                 <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
@@ -65,9 +65,9 @@ const Sidebar = () => {
                 ))}
               </div>
             ))}
-          </div> */}
+          </div>
 
-          <div className="mt-10 ">
+          {/* <div className="mt-10 ">
             <div key = "Map">
               <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
                   Map
@@ -87,7 +87,7 @@ const Sidebar = () => {
                 <span className="capitalize ">Map</span>
               </NavLink>
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </div>

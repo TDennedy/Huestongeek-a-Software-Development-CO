@@ -1,5 +1,5 @@
 import './homepage.css'
-import map from '../data/HWMap.png'
+// import map from '../data/HWMap.png'
 import { SiRedwoodjs } from 'react-icons/si';
 
 export default function HomePage({ keycloak }) {
