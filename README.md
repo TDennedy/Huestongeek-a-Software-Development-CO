@@ -12,8 +12,8 @@ npm -v
 
 ## Front-end Start Guide
 To run the front-end site on Terminal starting from the home folder:
-`cd dashboard`
+```cd dashboard```
 Then install and run the **npm** package:
-`npm install`
+```npm install```
 And start:
-`npm start`
+```npm start```
