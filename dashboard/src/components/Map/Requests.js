@@ -3,5 +3,5 @@ export async function getOxfordTrails() {
 }
 
 export async function getTrails(id) {
-	return fetch(`http://localhost:8080/trails?id=${id}`);
+	return fetch(`http://ceclnx01.cec.miamioh.edu:8085/trails?id=${id}`);
 }

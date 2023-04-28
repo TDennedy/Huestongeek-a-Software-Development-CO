@@ -40,7 +40,6 @@ const initialViewState = {
 	zoom: 14
 }
 
-
 // Displaying the drawn trails
 function MapComponent() {
 	const [ data, setData ] = useState(null);
@@ -54,36 +53,32 @@ function MapComponent() {
 		getData();
 	}, [data]);
 
-	useEffect(() => {
-		const getData = async () => {
-			const response = await fetch(
-				"https://api.maptiler.com/data/d5ed667f-6740-41d7-90ae-8db62726665a/features.json?key=Adfu325jajdZpZFxiEJu"
-			)
-			const json = await response.json()
-
-			console.log(json)
-
-			setData(json)
-		}
-
-		getData();
-	}, [])
-
 	// if (data != null)
-		return (
-			<Map mapLib={maplibregl}
-				initialViewState={initialViewState}
-				mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
-				style={{width: "100%", height: " calc(100vh - 77px)"}}
-			>
-				<NavigationControl position="top-left" />
-				<Source type="geojson" data={data}>
-					<Layer {...pointLayerStyle} />
-					<Layer {...lineLayerStyle} />
-				</Source>
-			</Map>
-		);
+	return (
+		<div>
+			<MapViewComponent data={data}/>
+			<MapSidebar data={data}/>
+		</div>
+	)
 }
+
+function MapViewComponent({ data }) {
+	return (
+		<Map mapLib={maplibregl}
+			initialViewState={initialViewState}
+			mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
+			style={{width: "100%", height: " calc(100vh - 77px)"}}
+		>
+			<NavigationControl position="top-left" />
+			<Source type="geojson" data={data}>
+				<Layer {...pointLayerStyle} />
+				<Layer {...lineLayerStyle} />
+			</Source>
+		</Map>
+	);
+}
+
+
 
 // Drawing the trails
 // function DrawMapComponent() {

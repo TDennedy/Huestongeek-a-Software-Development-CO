@@ -58,7 +58,6 @@ const UserProfile = () => {
                 <p className="text-gray-500 text-sm dark:text-gray-400"> {item.desc} </p>
               </div>
             </div>
-// <<<<<<< HEAD
           ))}
         </div>
         <div className="mt-5">
