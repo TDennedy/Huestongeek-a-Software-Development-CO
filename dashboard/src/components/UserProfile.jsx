@@ -53,24 +53,24 @@ const UserProfile = () => {
                 {item.icon}
               </button>
 
-              <div>
-                <p className="font-semibold dark:text-gray-200 ">{item.title}</p>
-                <p className="text-gray-500 text-sm dark:text-gray-400"> {item.desc} </p>
-              </div>
+            <div>
+              <p className="font-semibold dark:text-gray-200 ">{item.title}</p>
+              <p className="text-gray-500 text-sm dark:text-gray-400"> {item.desc} </p>
             </div>
-          ))}
-        </div>
-        <div className="mt-5">
-          <Button
-            color="white"
-            bgColor={currentColor}
-            text="Logout"
-            borderRadius="10px"
-            width="full"
-            onClick={(navigate) => keycloak.logout()}
-          />
-        </div>
+          </div>
+        ))}
       </div>
+      <div className="mt-5">
+        <Button
+          color="white"
+          bgColor={currentColor}
+          text="Logout"
+          borderRadius="10px"
+          width="full"
+          onClickLogout={(navigate) => navigate('/')}
+        />
+      </div>
+    </div>
 
     );
   return null;

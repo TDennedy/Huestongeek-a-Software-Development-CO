@@ -9,6 +9,7 @@ import { getOxfordTrails } from "./Requests.js"
 // import trails from "./features.json";
 
 import { useEffect, useState } from "react";
+import { DataManager } from '@syncfusion/ej2/data.js';
 
 const TRAIL_COLOR_KEY = "color";
 
@@ -61,28 +62,29 @@ function MapComponent() {
 			)
 			const json = await response.json()
 
-			console.log(json)
-
 			setData(json)
 		}
 
 		getData();
 	}, [])
 
-	// if (data != null)
+	// if (data != null) {
 		return (
-			<Map mapLib={maplibregl}
-				initialViewState={initialViewState}
-				mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
-				style={{width: "100%", height: " calc(100vh - 77px)"}}
-			>
-				<NavigationControl position="top-left" />
-				<Source type="geojson" data={data}>
-					<Layer {...pointLayerStyle} />
-					<Layer {...lineLayerStyle} />
-				</Source>
-			</Map>
+			<>
+				<Map mapLib={maplibregl}
+					initialViewState={initialViewState}
+					mapStyle="https://api.maptiler.com/maps/c5c52cca-2522-4e56-bbb7-f9e0a0832fed/style.json?key=Adfu325jajdZpZFxiEJu"
+					style={{width: "100%", height: " calc(100vh - 77px)"}}
+				>
+					<NavigationControl position="top-left" />
+					<Source type="geojson" data={data}>
+						<Layer {...pointLayerStyle} />
+						<Layer {...lineLayerStyle} />
+					</Source>
+				</Map>
+			</>
 		);
+	// }
 }
 
 // Drawing the trails

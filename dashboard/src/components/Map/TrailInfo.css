@@ -1,0 +1,17 @@
+.trailinfo {
+    position: relative;
+}
+
+.trail {
+    position: relative;
+    display: block;
+    background-color:rgb(241, 241, 241);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.trail h1 {
+    color: rgb(115, 82, 255);
+}
