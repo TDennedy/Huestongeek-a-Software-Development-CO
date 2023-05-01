@@ -15,7 +15,7 @@ export default function HomePage({ keycloak }) {
                 <button onClick={() => keycloak.login({ redirectUri: origin})}>
                     Login
                 </button>
-            </nav><div class="map">
+            </nav><div className="map">
                 <img src={map} alt="Map Image" />
             </div><footer>
                 <p>Copyright HuestonGeeks 2023</p>
