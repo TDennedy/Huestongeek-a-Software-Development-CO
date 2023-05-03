@@ -529,6 +529,12 @@ export const links = [
       // },
     ],
   },
+
+  {
+    title: 'Trail Info',
+    links: [],
+  },
+
   // {
   //   title: 'Charts',
   //   links: [
