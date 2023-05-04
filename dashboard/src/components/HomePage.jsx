@@ -1,6 +1,6 @@
 import './style_index.css'
 
-export default function HomePage({ keycloak }) {
+const HomePage = ({ keycloak }) => {
     return (
         <div>
             <nav className="container-fluid nav">
@@ -73,7 +73,8 @@ export default function HomePage({ keycloak }) {
                 <p>© 2022 All rights reserved by Huestongeek.com</p>
             </div>
         </footer>
->>>>>>> Stashed changes
         </div>
     );
 }
+
+export default HomePage
