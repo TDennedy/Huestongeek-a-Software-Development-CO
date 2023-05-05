@@ -16,7 +16,7 @@ mvn clean install spring-boot:repackage
 java -jar hiking-backend-0.0.1-SNAPSHOT.jar
 ```
 
-**NOTE: You will need to configure the application.properties file and add the proper credentials to connect to the database. **
+**NOTE: You will need to configure the `application.properties` file and add the proper credentials to connect to the database.**
 
 Java 19 is recommended, or if possible, GraalVM Java 19.
 
