@@ -17,3 +17,7 @@ java -jar hiking-backend-0.0.1-SNAPSHOT.jar
 ```
 
 Java 19 is recommended, or if possible, GraalVM Java 19.
+
+## Third Party Libraries
+
+Please see `pom.xml` for all third party libraries used in the backend.
