@@ -4,19 +4,19 @@ The SpringBoot backend for Huestongeek.
 
 ## Installation
 
-After cloning, run a Maven install with the following command:
+1. After cloning, build with the following command:
 
 ```
 mvn clean install spring-boot:repackage
 ```
 
-`target` directory will now contain an executable jar named `hiking-backend-0.0.1-SNAPSHOT.jar`. Run it as follows:
+2. `target` directory will now contain an executable jar named `hiking-backend-0.0.1-SNAPSHOT.jar`. **Before running anything**, configure `src/main/resources/application.properties` according to the instructions provided in it.
+
+3. `cd target` and run the app (`hiking-backend-0.0.1-SNAPSHOT.jar`) as follows:
 
 ```
 java -jar hiking-backend-0.0.1-SNAPSHOT.jar
 ```
-
-**NOTE: You will need to configure the `application.properties` file and add the proper credentials to correctly connect to the target database.**
 
 Java 19 is recommended, or if possible, GraalVM Java 19.
 
