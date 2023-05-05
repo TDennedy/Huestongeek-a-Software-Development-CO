@@ -4,7 +4,7 @@ This is used to convert a file of latitude and longitude points to an encoded po
 
 # Instructions
 ## Install
-* `git clone -b Data https://github.com/TDennedy/Huestongeek-a-Software-Development-CO.git` \
+* `git clone -b Data https://github.com/TDennedy/Huestongeek-a-Software-Development-CO.git`
 * `cd Huestongeek-a-Software-Development-CO`
 ## Build
 * `javac src/*.java`
